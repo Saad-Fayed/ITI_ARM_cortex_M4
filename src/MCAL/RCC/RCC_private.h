@@ -19,6 +19,13 @@
 #define	HSE_CRYSTAL 3
 #define	PLL         4
 
+/*    Error States     */
+typedef enum
+{
+	OK,
+	Wrong_bus_ID,
+	Wrong_Peripheral_ID
+}Error_State_e;
 
 /*    RCC Registers    */
 

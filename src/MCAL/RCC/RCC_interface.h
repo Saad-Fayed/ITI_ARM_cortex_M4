@@ -35,31 +35,31 @@
 #define RCC_OTGFSEN 7
 
 /*APB1ENR Peripherals*/
-#define RCC_TIM2EN	 0
-#define RCC_TIM3EN	 1
-#define RCC_TIM4EN	 2
-#define RCC_TIM5EN	 3
-#define RCC_WWDGEN	 11
-#define RCC_SPI2EN	 14
-#define RCC_SPI3EN	 15
-#define RCC_USART2EN 17
-#define RCC_I2C1EN	 21
-#define RCC_I2C2EN	 22
-#define RCC_I2C3EN	 23
-#define RCC_PWREN	 28
+#define RCC_TIM2EN	 62
+#define RCC_TIM3EN	 63
+#define RCC_TIM4EN	 64
+#define RCC_TIM5EN	 65
+#define RCC_WWDGEN	 73
+#define RCC_SPI2EN	 76
+#define RCC_SPI3EN	 77
+#define RCC_USART2EN 79
+#define RCC_I2C1EN	 83
+#define RCC_I2C2EN	 84
+#define RCC_I2C3EN	 85
+#define RCC_PWREN	 90
 
 /*APB2ENR Peripherals*/
-#define RCC_TIM1EN	  0
-#define RCC_USART1EN  4
-#define RCC_USART6EN  5
-#define RCC_ADC1EN	  8
-#define RCC_SDIOEN	  11
-#define RCC_SPI1EN	  12
-#define RCC_SPI4EN	  13
-#define RCC_SYSCFGEN  14
-#define RCC_TIM9EN	  16
-#define RCC_TIM10EN	  17
-#define RCC_TIM11EN	  18
+#define RCC_TIM1EN	  93
+#define RCC_USART1EN  97
+#define RCC_USART6EN  98
+#define RCC_ADC1EN	  101
+#define RCC_SDIOEN	  104
+#define RCC_SPI1EN	  105
+#define RCC_SPI4EN	  106
+#define RCC_SYSCFGEN  107
+#define RCC_TIM9EN	  109
+#define RCC_TIM10EN	  110
+#define RCC_TIM11EN	  111
 
 /*************************************************************************/
 /************************Functions' prototypes****************************/
@@ -69,7 +69,7 @@
 void RCC_voidSetSystemClock(void);
 
 /*This Function Shall Enable a Specific Peripheral*/
-void RCC_voidEnablePeripheralClock(u8 Copy_u8BusID , u8 Copy_u8PeripheralID);
+u8 RCC_u8EnablePeripheralClock(u8 Copy_u8BusID , u8 Copy_u8PeripheralID);
 
 /*This Function Shall Disable a Specific Peripheral*/
 void RCC_voidDisablePeripheralClock(u8 Copy_u8BusID , u8 Copy_u8PeripheralID);

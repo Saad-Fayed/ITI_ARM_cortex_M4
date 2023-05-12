@@ -31,6 +31,11 @@
 #define GPIO_OUTPUT_HIGH	1
 #define GPIO_OUTPUT_LOW		0
 
+/*Input Pin Modes*/
+#define GPIO_INPUT_FLOAT		0
+#define GPIO_INPUT_PULL_UP		1
+#define GPIO_INPUT_PULL_DOWN	2
+
 /*Port's Pins*/
 #define GPIO_PIN0 	0
 #define GPIO_PIN1 	1

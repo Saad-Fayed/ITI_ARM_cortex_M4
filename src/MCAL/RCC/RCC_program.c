@@ -61,24 +61,63 @@ void RCC_voidSetSystemClock(void)
 #endif
 }
 
-void RCC_voidEnablePeripheralClock(u8 Copy_u8BusID , u8 Copy_u8PeripheralID)
+u8 RCC_u8EnablePeripheralClock(u8 Copy_u8BusID , u8 Copy_u8PeripheralID)
 {
+	u8 Local_Error_State = OK;
+
+
 	switch(Copy_u8BusID)
 	{
+
 	case(RCC_AHB1):
-		SET_BIT(RCC->RCC_AHB1ENR,Copy_u8PeripheralID);
+
+		if(Copy_u8PeripheralID<0 || Copy_u8PeripheralID>22)
+			Local_Error_State = Wrong_Peripheral_ID;
+		else
+			SET_BIT(RCC->RCC_AHB1ENR,Copy_u8PeripheralID);
+
 		break;
+
 	case(RCC_AHB2):
-		SET_BIT(RCC->RCC_AHB2ENR,Copy_u8PeripheralID);
+
+		Copy_u8PeripheralID -= 31;
+
+		if(Copy_u8PeripheralID != 7)
+			Local_Error_State = Wrong_Peripheral_ID;
+		else
+			SET_BIT(RCC->RCC_AHB2ENR,Copy_u8PeripheralID);
+
 		break;
+
 	case(RCC_APB1):
-		SET_BIT(RCC->RCC_APB1ENR,Copy_u8PeripheralID);
+
+		Copy_u8PeripheralID -= 62;
+
+		if(Copy_u8PeripheralID<0 || Copy_u8PeripheralID>28)
+			Local_Error_State = Wrong_Peripheral_ID;
+		else
+			SET_BIT(RCC->RCC_APB1ENR,Copy_u8PeripheralID);
+
 		break;
+
 	case(RCC_APB2):
+
+		Copy_u8PeripheralID -= 93;
+
+		if(Copy_u8PeripheralID<0 || Copy_u8PeripheralID>18)
+			Local_Error_State = Wrong_Peripheral_ID;
+		else
 		SET_BIT(RCC->RCC_APB2ENR,Copy_u8PeripheralID);
+
 		break;
-	/*Implement Error State Using Enum*/
+
+	default:
+
+		Local_Error_State = Wrong_bus_ID;
+
+		break;
 	}
+	return Local_Error_State;
 }
 
 void RCC_voidDisablePeripheralClock(u8 Copy_u8BusID , u8 Copy_u8PeripheralID)
