@@ -1,9 +1,10 @@
-/*
- * GPIO_program.c
- *
- *  Created on: May 11, 2023
- *      Author: LENOVO
- */
+/*******************************************************************************/
+/*Author      : Saad Mohamed Saad					 				           */
+/*File Name   : GPIO_program.c             	                                   */
+/*Layer       : MCAL		    						  		               */
+/*Description : This file contains Function Implementation of GPIO Peripheral  */
+/*Date        : 18 May 2023                                                    */
+/*******************************************************************************/
 
 #include "../../LIB/STD_LIB.h"
 #include "../../LIB/BIT_MATHS.h"

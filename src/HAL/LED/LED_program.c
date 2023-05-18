@@ -1,9 +1,10 @@
-/*
- * LED_program.c
- *
- *  Created on: May 17, 2023
- *      Author: LENOVO
- */
+/*******************************************************************************/
+/*Author      : Saad Mohamed Saad					 				           */
+/*File Name   : LED_program.c             	                                   */
+/*Layer       : HAL		    						  		                   */
+/*Description : This file contains Function Implementation of LED Module	   */
+/*Date        : 18 May 2023                                                    */
+/*******************************************************************************/
 
 #include "../../LIB/BIT_MATHS.h"
 #include "../../LIB/STD_LIB.h"
@@ -39,9 +40,10 @@ void LED_voidToggle(u8 Copy_u8PinID)
 	u8 Local_u8PortID;
 	u8 Local_u8PinID;
 
+	/* Extract the port ID and pin ID from the input pin ID */
 	Local_u8PortID = Copy_u8PinID / 16;
 	Local_u8PinID = Copy_u8PinID % 16;
 
-	/*This Function Shall Toggle LED*/
+	/* This Function Shall Toggle LED */
 	TGL_BIT(Local_u8PortID,Local_u8PinID);
 }

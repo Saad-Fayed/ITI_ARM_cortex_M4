@@ -1,5 +1,5 @@
 /************************************************************************/
-/*Author      : Saad Mohamed										    */
+/*Author      : Saad Mohamed Saad									    */
 /*File Name   : RCC_interface.h                                         */
 /*Layer       : MCAL								 	        	    */
 /*Description : This file contains Interfacing parameters of RCC module */

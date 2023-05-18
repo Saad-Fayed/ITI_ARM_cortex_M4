@@ -1,9 +1,10 @@
-/*
- * RCC_program.c
- *
- *  Created on: May 4, 2023
- *      Author: LENOVO
- */
+/*******************************************************************************/
+/*Author      : Saad Mohamed Saad					 				           */
+/*File Name   : RCC_program.c             	                                   */
+/*Layer       : MCAL		    						  		               */
+/*Description : This file contains Function Implementation of RCC Module	   */
+/*Date        : 5 May 2023                                                     */
+/*******************************************************************************/
 
 #include "../../LIB/STD_LIB.h"
 #include "../../LIB/BIT_MATHS.h"

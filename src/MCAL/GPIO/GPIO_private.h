@@ -1,9 +1,10 @@
-/*
- * GPIO_private.h
- *
- *  Created on: May 11, 2023
- *      Author: LENOVO
- */
+/*******************************************************************************/
+/*Author      : Saad Mohamed Saad					 				           */
+/*File Name   : GPIO_private.h             	                                   */
+/*Layer       : MCAL		    						  		               */
+/*Description : This file contains private parameters of GPIO Peripheral       */
+/*Date        : 18 May 2023                                                    */
+/*******************************************************************************/
 
 #ifndef MCAL_GPIO_GPIO_PRIVATE_H_
 #define MCAL_GPIO_GPIO_PRIVATE_H_

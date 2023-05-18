@@ -1,9 +1,10 @@
-/*
- * SSD_program.c
- *
- *  Created on: May 17, 2023
- *      Author: LENOVO
- */
+/*******************************************************************************/
+/*Author      : Saad Mohamed Saad					 				           */
+/*File Name   : SSD_program.c             	                                   */
+/*Layer       : HAL		    						  		                   */
+/*Description : This file contains Function Implementation of SSD Module	   */
+/*Date        : 18 May 2023                                                    */
+/*******************************************************************************/
 
 #include "../../LIB/BIT_MATHS.h"
 #include "../../LIB/STD_LIB.h"
@@ -15,6 +16,8 @@
 
 void SSD_voidInit(StrSSD_t * Copy_PStr_SSD)
 {
+	/* Initialize the pins connected to the SSD segments as output pins with low speed
+	 * and push-pull configuration */
 	GPIO_voidInitOutputPin(Copy_PStr_SSD->SSD_Led_A_Pin,GPIO_PUSH_PULL,GPIO_LOW_SPEED);
 	GPIO_voidInitOutputPin(Copy_PStr_SSD->SSD_Led_B_Pin,GPIO_PUSH_PULL,GPIO_LOW_SPEED);
 	GPIO_voidInitOutputPin(Copy_PStr_SSD->SSD_Led_C_Pin,GPIO_PUSH_PULL,GPIO_LOW_SPEED);
@@ -27,11 +30,12 @@ void SSD_voidInit(StrSSD_t * Copy_PStr_SSD)
 
 void SSD_voidTurnOn(StrSSD_t * Copy_PStr_SSD)
 {
-	if(Copy_PStr_SSD->SSD_Type == COMMON_CATHOD_SSD) // Common VCC
+	/* Set the control pin to the appropriate value depending on the type of the SSD */
+	if(Copy_PStr_SSD->SSD_Type == COMMON_CATHOD_SSD) // Common Ground
 	{
 		GPIO_voidSetOutputPinValue(Copy_PStr_SSD->SSD_Control_Pin,GPIO_OUTPUT_LOW);
 	}
-	else if(Copy_PStr_SSD->SSD_Type == COMMON_ANODE_SSD) // Common Ground
+	else if(Copy_PStr_SSD->SSD_Type == COMMON_ANODE_SSD) // Common VCC
 	{
 		GPIO_voidSetOutputPinValue(Copy_PStr_SSD->SSD_Control_Pin,GPIO_OUTPUT_HIGH);
 	}
@@ -39,6 +43,8 @@ void SSD_voidTurnOn(StrSSD_t * Copy_PStr_SSD)
 
 void SSD_voidTurnOff(StrSSD_t * Copy_PStr_SSD)
 {
+	/* Set the control pin to the opposite value of what was set in SSD_voidTurnOn
+	 *  to turn off the SSD */
 	if(Copy_PStr_SSD->SSD_Type == COMMON_CATHOD_SSD) // Common VCC
 	{
 		GPIO_voidSetOutputPinValue(Copy_PStr_SSD->SSD_Control_Pin,GPIO_OUTPUT_HIGH);
@@ -51,8 +57,9 @@ void SSD_voidTurnOff(StrSSD_t * Copy_PStr_SSD)
 
 void SSD_voidDisplayNumber(StrSSD_t * Copy_PStr_SSD,u8 Copy_u8Number)
 {
-	u8 Local_u8Number = 0b1101111 ;
+	u8 Local_u8Number = 0 ;
 
+	/* Determine the number to be displayed on the SSD based on its type */
 	if(Copy_PStr_SSD->SSD_Type == COMMON_CATHOD_SSD) // Common VCC
 	{
 		Local_u8Number = Copy_u8Number;
@@ -62,6 +69,8 @@ void SSD_voidDisplayNumber(StrSSD_t * Copy_PStr_SSD,u8 Copy_u8Number)
 		Local_u8Number = (~ Copy_u8Number);
 	}
 
+	/* Set the appropriate values on the pins connected to the SSD segments
+	 * based on the number to be displayed */
 	GPIO_voidSetOutputPinValue(Copy_PStr_SSD->SSD_Led_A_Pin , ((Local_u8Number >> 0) & 1));
 	GPIO_voidSetOutputPinValue(Copy_PStr_SSD->SSD_Led_B_Pin , ((Local_u8Number >> 1) & 1));
 	GPIO_voidSetOutputPinValue(Copy_PStr_SSD->SSD_Led_C_Pin , ((Local_u8Number >> 2) & 1));

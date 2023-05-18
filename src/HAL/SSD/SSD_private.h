@@ -1,9 +1,10 @@
-/*
- * SSD_private.h
- *
- *  Created on: May 17, 2023
- *      Author: LENOVO
- */
+/************************************************************************/
+/*Author      : Saad Mohamed Saad									    */
+/*File Name   : SSD_private.h                                           */
+/*Layer       : HAL	    							 	        	    */
+/*Description : This file contains private parameters of SSD module     */
+/*Date        : 18 May 2023                                             */
+/************************************************************************/
 
 #ifndef HAL_SSD_SSD_PRIVATE_H_
 #define HAL_SSD_SSD_PRIVATE_H_

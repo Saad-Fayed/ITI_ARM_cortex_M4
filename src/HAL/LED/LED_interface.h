@@ -1,9 +1,10 @@
-/*
- * LED_interface.h
- *
- *  Created on: May 17, 2023
- *      Author: LENOVO
- */
+/************************************************************************/
+/*Author      : Saad Mohamed Saad									    */
+/*File Name   : LED_interface.h                                         */
+/*Layer       : HAL									 	        	    */
+/*Description : This file contains Interfacing parameters of LED module */
+/*Date        : 18 May 2023                                             */
+/************************************************************************/
 
 #ifndef HAL_LED_LED_INTERFACE_H_
 #define HAL_LED_LED_INTERFACE_H_

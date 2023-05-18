@@ -1,7 +1,10 @@
-
-
-
-
+/*******************************************************************************/
+/*Author      : Saad Mohamed Saad					 				           */
+/*File Name   : BIT_MATHS.h             	                                   */
+/*Layer       : LIB		    						  		                   */
+/*Description : This file contains Bit Wise Operation Function Like Macros     */
+/*Date        : 18 May 2023                                                    */
+/*******************************************************************************/
 
 #ifndef RCC_BIT_MATHS_H
 #define RCC_BIT_MATHS_H

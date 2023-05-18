@@ -1,9 +1,10 @@
-/*
- * GPIO_interface.h
- *
- *  Created on: May 11, 2023
- *      Author: LENOVO
- */
+/*******************************************************************************/
+/*Author      : Saad Mohamed Saad					 				           */
+/*File Name   : GPIO_interface.h             	                               */
+/*Layer       : MCAL		    						  		               */
+/*Description : This file contains Interfacing parameters of GPIO Peripheral   */
+/*Date        : 18 May 2023                                                    */
+/*******************************************************************************/
 
 #ifndef MCAL_GPIO_GPIO_INTERFACE_H_
 #define MCAL_GPIO_GPIO_INTERFACE_H_

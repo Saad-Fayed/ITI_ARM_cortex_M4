@@ -1,9 +1,10 @@
-/*
- * KPD_config.h
- *
- *  Created on: May 18, 2023
- *      Author: LENOVO
- */
+/**************************************************************************/
+/*Author      : Saad Mohamed Saad									      */
+/*File Name   : KPD_Config.h                                              */
+/*Layer       : HAL								 	        	          */
+/*Description : This file contains Configuration parameters of KPD module */
+/*Date        : 18 May 2023                                               */
+/**************************************************************************/
 
 #ifndef HAL_KPD_KPD_CONFIG_H_
 #define HAL_KPD_KPD_CONFIG_H_

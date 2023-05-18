@@ -1,5 +1,5 @@
 /**************************************************************************/
-/*Author      : Saad Mohamed										      */
+/*Author      : Saad Mohamed Saad									      */
 /*File Name   : RCC_Config.h                                              */
 /*Layer       : MCAL								 	        	      */
 /*Description : This file contains Configuration parameters of RCC module */

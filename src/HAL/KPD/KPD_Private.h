@@ -1,9 +1,10 @@
-/*
- * KPD_Private.h
- *
- *  Created on: May 18, 2023
- *      Author: LENOVO
- */
+/************************************************************************/
+/*Author      : Saad Mohamed Saad									    */
+/*File Name   : KPD_private.h                                           */
+/*Layer       : HAL	    							 	        	    */
+/*Description : This file contains private parameters of KPD module     */
+/*Date        : 18 May 2023                                             */
+/************************************************************************/
 
 #ifndef HAL_KPD_KPD_PRIVATE_H_
 #define HAL_KPD_KPD_PRIVATE_H_
@@ -12,6 +13,8 @@
 /***************************Private Macros********************************/
 /*************************************************************************/
 
+/*	A structure of type StrKPD_t that contains
+ *  the pins used for the keypad.*/
 typedef struct
 {
 	u8 KPD_PIN_R1;
