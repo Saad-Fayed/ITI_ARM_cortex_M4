@@ -20,6 +20,10 @@ typedef struct
 	volatile u32 PUPDR  ; //This Register is to select whether pull up or pull down input pins.
 	volatile u32 IDR    ; //This Register is to get the value of input pins.
 	volatile u32 ODR    ; //This Register is to set the value of output pins.
+	volatile u32 BSRR   ; //This Register is to Set the Value of output pins in Atomic Access
+	volatile u32 LCKR   ; //This Register is to Lock Configuration of GPIO registers
+	volatile u32 AFRL   ; //This Register is to configure alternate function For Pins 0~7
+	volatile u32 AFRH   ; //This Register is to configure alternate function For Pins 8~15
 }GPIO_REG_t;
 
 /*Pointer to Struct*/
