@@ -9,14 +9,13 @@
 #include "../../LIB/STD_LIB.h"
 #include "../../LIB/BIT_MATHS.h"
 
+#include "GPIO_interface.h"
 #include "GPIO_private.h"
 #include "GPIO_config.h"
-#include "GPIO_interface.h"
 
 /*************************************************************************/
 /***********************Functions' Implementation*************************/
 /*************************************************************************/
-
 
 void GPIO_voidInitOutputPin(u8 Copy_u8PinID, u8 Copy_u8PinType, u8 Copy_u8PinSpeed)
 {
