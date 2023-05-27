@@ -34,7 +34,6 @@ void NVIC_voidClearPendingFlag(u8 Copy_u8InterruptID);
  * specified by the given ID in the NVIC module */
 u8 NVIC_u8ReadActiveFlag(u8 Copy_u8InterruptID);
 
-void NVIC_setSWPriority(u8 Copy_u8GroupPri,u8 Copy_u8SubPri ,u8 Copy_u8InterruptID);
-//void NVIC_setSWPriority(u8 Copy_u8Priority,u8 Copy_u8InterruptID);
+void NVIC_voidSetSWPriority(u8 Copy_u8GroupPri,u8 Copy_u8SubPri ,u8 Copy_u8InterruptID);
 
 #endif /* MCAL_NVIC_NVIC_INTERFACE_H_ */

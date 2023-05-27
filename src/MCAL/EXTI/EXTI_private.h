@@ -15,6 +15,7 @@
 
 /* Base Addresses For NVIC Registers */
 #define EXTI_BASE_ADDRESS (0x40013C00)
+#define SYSCFG_BASE_ADDRESS (0x40013800)
 
 typedef struct
 {
@@ -26,9 +27,16 @@ typedef struct
 	volatile u32 PR;	//Pending register. Used For
 }EXTI_REG_t;
 
+typedef struct
+{
+	u32 MEMRMP ;
+	u32 PMC ;
+	u32 EXTICR[4] ;
+}SYSCFG_REG_t;
+
 /* Pointer to STRUCT */
-#define EXTI  ((volatile EXTI_REG_t *)EXTI_BASE_ADDRESS)
+#define EXTI        ((volatile EXTI_REG_t *)EXTI_BASE_ADDRESS)
 
-
+#define SYSCFG 		((volatile SYSCFG_REG_t *)(SYSCFG_BASE_ADDRESS))
 
 #endif /* MCAL_EXTI_EXTI_PRIVATE_H_ */

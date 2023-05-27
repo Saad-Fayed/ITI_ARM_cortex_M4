@@ -15,6 +15,6 @@
  *2- HSE_RC
  *3- HSE_CRYSTAL
  *4- PLL  */
-#define SYSTEM_CLK_SRC	HSE_CRYSTAL
+#define SYSTEM_CLK_SRC	HSI
 
 #endif

@@ -99,42 +99,16 @@ u8 NVIC_u8ReadActiveFlag(u8 Copy_u8InterruptID)
 	/* This Function Will Read IAB Register where
 	 * 1 ==> Active
 	 * 0 ==> Not-Active */
-	Local_u8ActiveFlageReading = GET_BIT(Local_u8IntIDReg,Local_u8IntIDBit);
+	Local_u8ActiveFlageReading = GET_BIT(NVIC->IABR[Local_u8IntIDReg],Local_u8IntIDBit);
 
 	/* Return the Reading of the Flag */
 	return Local_u8ActiveFlageReading;
 }
 
-void NVIC_setSWPriority(u8 Copy_u8GroupPri,u8 Copy_u8SubPri ,u8 Copy_u8InterruptID)
+void NVIC_voidSetSWPriority(u8 Copy_u8GroupPri,u8 Copy_u8SubPri ,u8 Copy_u8InterruptID)
 {
 	/* Setting Both Group and Sub into the High 4bits */
-	NVIC->IPR[Copy_u8InterruptID] = (Copy_u8GroupPri << (7 - PRIORITY_CONFIG));
-	NVIC->IPR[Copy_u8InterruptID] = (Copy_u8SubPri << (PRIORITY_CONFIG - 3));
-
-	/*#if (PRIORITY_CONFIG == GROUP_4_SUB_0)
-		{
-			NVIC->IPR[Copy_u8InterruptID] = (Copy_u8GroupPri<<4);
-			NVIC->IPR[Copy_u8InterruptID] = (Copy_u8SubPri<<0);
-		}
-	#elif (PRIORITY_CONFIG == GROUP_3_SUB_1)
-		{
-			NVIC->IPR[Copy_u8InterruptID] = (Copy_u8GroupPri<<3);
-			NVIC->IPR[Copy_u8InterruptID] = (Copy_u8SubPri<<1);
-		}
-	#elif (PRIORITY_CONFIG == GROUP_2_SUB_2)
-		{
-			NVIC->IPR[Copy_u8InterruptID] = (Copy_u8GroupPri<<2);
-			NVIC->IPR[Copy_u8InterruptID] = (Copy_u8SubPri<<2);
-		}
-	#elif (PRIORITY_CONFIG == GROUP_1_SUB_3)
-		{
-			NVIC->IPR[Copy_u8InterruptID] = (Copy_u8GroupPri<<1);
-			NVIC->IPR[Copy_u8InterruptID] = (Copy_u8SubPri<<3);
-		}
-	#elif (PRIORITY_CONFIG == GROUP_0_SUB_4)
-		{
-			NVIC->IPR[Copy_u8InterruptID] = (Copy_u8GroupPri<<0);
-			NVIC->IPR[Copy_u8InterruptID] = (Copy_u8SubPri<<4);
-		}
-	#endif */
+	NVIC->IPR[Copy_u8InterruptID] = (Copy_u8GroupPri << (4 + (PRIORITY_CONFIG - 3))) | (Copy_u8SubPri << 4);
 }
+
+

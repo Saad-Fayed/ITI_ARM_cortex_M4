@@ -27,7 +27,7 @@
 
 /* Base Addresses For NVIC Registers */
 #define NVIC_BASE_ADDRESS (0xE000E100)
-#define SCB_AIRCR_BASE_ADDRESS (0xE000D0C)
+#define SCB_AIRCR_BASE_ADDRESS (0xE000ED0C)
 
 typedef struct
 {
